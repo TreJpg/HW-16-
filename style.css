@@ -22,24 +22,58 @@ a {
 }
 
 a:hover {
-
+background-color: forestgreen;
 }
 
 .one {
-
+transition-property: background-color;
+transition-duration: 2s;
+animation: scaleUp 400ms ease 200ms;
 }
 
 .two {
+  transition-property: background-color;
+  transition-duration: 400ms;
 
 }
 
 .three {
-
+  /* transition-timing-function: ease-out;
+  transition-property: background-color;
+  transition-duration: 400ms;
+ transition animation-delay:2000ms; */ 
+ transition: background-color 400ms ease-out 2000ms; /*shorthand version*/ 
+ animation: focus 400ms ease-in;
 }
 
 .four {
+  transition: background-color 400ms ease-out 2000ms;
+  font-size: 800ms linear 100ms;
 }
 
 .five {
+ transition: background-color 400ms ease-out 2000ms;
+}
 
+@keyframes scaleUp { 
+0% {
+  transform: scale(0.5);
+}
+100% {
+  transform: scale(1);
+}
+}
+@keyframes flip{
+100% {
+  transform: rotateY(-180deg);
+}
+}
+
+@keyframes focus {
+  0% {
+    filter: blur(12px);
+  }
+  100% {
+    filter: blur(0px);
+  }
 }
